@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    // 指定 TypeScript 构建信息文件的路径
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+    // 设置编译目标ECMAScript版本
+    "target": "ESNext",
+    // 指定要包含在编译中的库文件
+    "lib": ["ES2023"],
+    // 指定模块代码生成
+    "module": "ESNext",
+    // 跳过所有声明文件（*.d.ts）的类型检查
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    // 模块解析策略，适用于打包器
+    "moduleResolution": "bundler",
+    // 允许在导入语句中使用.ts扩展名
+    "allowImportingTsExtensions": true,
+    // 禁止自动添加默认导出
+    "verbatimModuleSyntax": true,
+    // 强制将每个文件视为模块
+    "moduleDetection": "force",
+    // 不生成输出文件
+    "noEmit": true,
+    // 添加 Node.js 类型支持
+    "types": ["node"],
+
+
+    /* Linting */
+    // 启用所有严格的类型检查选项
+    "strict": true,
+    // 报告未使用的本地变量
+    "noUnusedLocals": true,
+    // 报告未使用的函数参数
+    "noUnusedParameters": true,
+    // 允许删除仅用于类型的导入
+    "erasableSyntaxOnly": true,
+    // 报告 switch 语句中的 case 分支没有 break 语句的情况
+    "noFallthroughCasesInSwitch": true,
+    // 禁止引入带有副作用但未明确使用的模块
+    "noUncheckedSideEffectImports": true
+  },
+  // 包含特定的配置文件
+  "include": ["vite.config.ts"]
+}
