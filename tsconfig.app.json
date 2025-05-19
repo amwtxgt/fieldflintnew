@@ -23,8 +23,9 @@
 
   // 指定需要包含在编译中的文件路径
   "include": [
-    "renderer/**/*.ts",   // 所有 .ts 文件
-    "renderer/**/*.tsx",  // 所有 .tsx 文件
-    "renderer/**/*.vue"   // 所有 .vue 文件（支持 Vue 单文件组件）
+    "src/renderer/**/*.ts",   // 所有 .ts 文件
+    "src/renderer/**/*.tsx",  // 所有 .tsx 文件
+    "src/renderer/**/*.vue"
+    // 所有 .vue 文件（支持 Vue 单文件组件）
   ]
 }

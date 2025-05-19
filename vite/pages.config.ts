@@ -12,7 +12,7 @@ import fs from 'node:fs'
 // 获取当前模块所在目录
 const __dirname = dirname(fileURLToPath(import.meta.url))
 // 定义页面根目录路径
-const pagesDir = resolve(__dirname, '../renderer/pages')
+const pagesDir = resolve(__dirname, '../src/renderer/pages')
 
 // 读取页面目录并生成配置
 const pages = fs.readdirSync(pagesDir)
