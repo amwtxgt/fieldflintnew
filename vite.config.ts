@@ -1,14 +1,6 @@
 import { defineConfig } from 'vite'
-import { dirname,resolve } from 'node:path'
-import {fileURLToPath} from 'node:url'
 import vue from '@vitejs/plugin-vue'
-
-const __dirname = dirname(fileURLToPath(import.meta.url))
-
-//获取pages入口路径
-const getRendererPagePath = (pageName:string)=>{
-  return resolve(__dirname, `renderer/pages/${pageName}/index.html`)
-}
+import { getRollupInput } from './vite/pages.config'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -16,15 +8,12 @@ export default defineConfig({
   build: {
     cssMinify: 'lightningcss',
     rollupOptions: {
-      input: {
-        main: getRendererPagePath('main'),
-      },
+      input: getRollupInput(),
     },
   },
-  css:{
+  css: {
     transformer: 'lightningcss',
     // Lightning CSS 配置
     lightningcss: {},
-
   }
 })
