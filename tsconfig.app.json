@@ -1,11 +1,9 @@
 {
   // 继承的基础 tsconfig 配置文件，这里是 Vue 官方提供的 tsconfig.dom.json
   "extends": "@vue/tsconfig/tsconfig.dom.json",
-
   "compilerOptions": {
     // 指定增量编译时生成的 .tsbuildinfo 文件路径
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-
     /* Linting 相关选项 */
     // 启用所有严格类型检查选项
     "strict": true,
@@ -18,13 +16,19 @@
     // 报错 switch 语句中 case 不显式 break 的情况
     "noFallthroughCasesInSwitch": true,
     // 禁止在导入时出现未经检查的副作用（例如没有类型导出的模块）
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
   },
-
   // 指定需要包含在编译中的文件路径
   "include": [
-    "src/renderer/**/*.ts",   // 所有 .ts 文件
-    "src/renderer/**/*.tsx",  // 所有 .tsx 文件
+    "src/renderer/**/*.ts",
+    // 所有 .ts 文件
+    "src/renderer/**/*.tsx",
+    // 所有 .tsx 文件
     "src/renderer/**/*.vue"
     // 所有 .vue 文件（支持 Vue 单文件组件）
   ]
